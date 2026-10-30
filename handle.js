@@ -1,11 +1,14 @@
+//pad the number with leading zeros to make columns aligned
 function leadingZeros(n, len) {
   return "0".repeat(len-n.length) + n;
 }
+
+//replace a single digit (used in subtract when borrowing)
 function replaceAt(s, spot, x) {
   return s.substring(0 ,spot) + x + s.substring(spot+1);
 }
 
-//remove leading 0s -> 003 -> 3
+//remove leading 0s: 003 -> 3; edge case of s = "0" fixed. 
 function removeLeadingZeros(s) {
   var b = false;
   b = s[0] == "-";
@@ -20,7 +23,7 @@ function removeLeadingZeros(s) {
       }
     }
   }
-  return ""
+  return "0";
 }
 
 //returns a>=b
